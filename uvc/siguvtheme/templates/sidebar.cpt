@@ -4,53 +4,15 @@
     <div class="menu">
       <div class="menu-section">
         <div class="menu-section-title">Links</div>
-        <a href="http://entwicklung-etem.bg-kooperation.de" title="Startseite">
-          <span class="menu-item-icon glyphicon glyphicon-home"></span> <span class="menu-item-title">Startseite</span>
-        </a>
-        <a href="http://entwicklung-etem.bg-kooperation.de/login" title="Anmelden">
-          <span class="menu-item-icon glyphicon glyphicon-log-in"></span> <span class="menu-item-title">Anmelden</span>
+        <a tal:repeat="um viewletmanager.quicklinks()" tal:attributes="href um.action">
+          <span tal:attributes="class um.icon"></span> <span class="menu-item-title" tal:content="um.title"></span>
         </a>
       </div>
       <div class="menu-section">
-
-        <div class="menu-section-title">Navigation</div>
-        <a href="http://entwicklung-etem.bg-kooperation.de/nachrichten" title="Nachrichten">
-          <span class="menu-item-icon glyphicon glyphicon-menu-right"></span> <span class="menu-item-title">Nachrichten</span>
+        <div class="menu-section-title">Meine Einstellungen</div>
+        <a tal:repeat="um viewletmanager.usermenu()" tal:attributes="href um.action">
+          <span tal:attributes="class um.icon"></span> <span class="menu-item-title" tal:content="um.title"></span>
         </a>
-
-        <a href="http://entwicklung-etem.bg-kooperation.de/wir-ueber-uns" title="Wir über uns">
-          <span class="menu-item-icon glyphicon glyphicon-menu-right"></span> <span class="menu-item-title">Wir über uns</span>
-        </a>
-
-        <a href="http://entwicklung-etem.bg-kooperation.de/mitglieder" title="Mitglieder">
-          <span class="menu-item-icon glyphicon glyphicon-menu-right"></span> <span class="menu-item-title">Mitglieder</span>
-        </a>
-
-        <a href="http://entwicklung-etem.bg-kooperation.de/versicherte" title="Versicherte">
-          <span class="menu-item-icon glyphicon glyphicon-menu-right"></span> <span class="menu-item-title">Versicherte</span>
-        </a>
-
-        <a href="http://entwicklung-etem.bg-kooperation.de/praevention" title="Prävention">
-          <span class="menu-item-icon glyphicon glyphicon-menu-right"></span> <span class="menu-item-title">Prävention</span>
-        </a>
-
-        <a href="http://entwicklung-etem.bg-kooperation.de/seminare" title="Seminare">
-          <span class="menu-item-icon glyphicon glyphicon-menu-right"></span> <span class="menu-item-title">Seminare</span>
-        </a>
-
-        <a href="http://entwicklung-etem.bg-kooperation.de/leistungen" title="Leistungen">
-          <span class="menu-item-icon glyphicon glyphicon-menu-right"></span> <span class="menu-item-title">Leistungen</span>
-        </a>
-
-        <a href="http://entwicklung-etem.bg-kooperation.de/service" title="Service">
-          <span class="menu-item-icon glyphicon glyphicon-menu-right"></span> <span class="menu-item-title">Service</span>
-        </a>
-
-        <a href="http://entwicklung-etem.bg-kooperation.de/willkommen-bei-plone" title="Willkommen bei Plone">
-          <span class="menu-item-icon glyphicon glyphicon-menu-right"></span> <span class="menu-item-title">Willkommen bei Plone</span>
-        </a>
-
-
       </div>
     </div>
   </nav>

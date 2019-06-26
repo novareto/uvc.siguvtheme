@@ -13,8 +13,8 @@
       <div class="row">
 
         <div class="col-10">
-          <a class="header-logo" href="http://entwicklung-etem.bg-kooperation.de">
-            <img src="" tal:attributes="src '/fanstatic/uvc.siguvtheme/bg-etem.svg'" alt="Plone site" title="Plone site">
+          <a class="header-logo" href="">
+            <img src="" tal:attributes="href layout.base; src '/fanstatic/uvc.siguvtheme/bg-etem.svg'" alt="Plone site" title="Plone site">
           </a>
         </div>
 

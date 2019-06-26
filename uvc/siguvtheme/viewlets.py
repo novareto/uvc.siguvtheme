@@ -8,7 +8,7 @@ import grok
 from .skin import ISiguvTheme
 from zope import interface, component
 from zope.viewlet.interfaces import IContentProvider
-
+from uvcsite.browser.layout.menu import IMenu
 
 grok.templatedir("templates")
 
@@ -24,20 +24,23 @@ class Sidebar(grok.ViewletManager):
         menu = component.queryMultiAdapter(
             (self.view.context, self.request, self.view), IContentProvider, "quicklinks"
         )
-        if menu is not None:
-            return menu.getMenuItems()
-        return None
+        menu.update()
+        return menu.viewlets
 
-    @property
     def usermenu(self):
         menu = component.queryMultiAdapter(
             (self.view.context, self.request, self.view),
-            IContentProvider,
+            IMenu,
             "personalpreferences",
         )
-        if menu is not None:
-            return menu.getMenuItems()
-        return None
+        if menu:
+            import pdb; pdb.set_trace()
+            return menu.entries()
+        return []
+
+    def update(self):
+        print(self.usermenu())
+        print(self.quicklinks())
 
 
 class Footer(grok.ViewletManager):
