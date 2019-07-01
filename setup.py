@@ -23,6 +23,7 @@ setup(name='uvc.siguvtheme',
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'js.fontawesome',
           # -*- Extra requirements: -*-
       ],
       entry_points={

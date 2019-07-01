@@ -127,3 +127,7 @@ body[data-with-sidebar='true'] #portal-navigation-cover, .with-sidebar #portal-n
     min-height: 30px;
     text-decoration: none;
 }
+
+footer {
+  padding-top: 30px;
+}

@@ -3,6 +3,8 @@
 
 from fanstatic import Library, Resource
 from js.jquery import jquery
+from js.fontawesome import fontawesome_js
+from js.fontawesome import fontawesome_all_css
 
 library = Library('uvc.siguvtheme', 'static')
 
@@ -12,5 +14,5 @@ bootstrap_css = Resource(
     source='siguvtheme.scss'
 )
 
-main_css = Resource(library, 'main.css', depends=[bootstrap_css, ])
+main_css = Resource(library, 'main.css', depends=[bootstrap_css, fontawesome_all_css ])
 main_js = Resource(library, 'main.js', depends=[jquery, ])

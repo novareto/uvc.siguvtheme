@@ -32,6 +32,7 @@ class Layout(layout.Layout):
         main_css.need()
         main_js.need()
 
-        self.base = absoluteURL(self.context, self.request)
+        site = grok.getSite()
+        self.base = absoluteURL(site, self.request)
         if IContainer.providedBy(self.context) and self.base[:-1] != '/':
             self.base = self.base + '/'

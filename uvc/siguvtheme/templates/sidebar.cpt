@@ -4,7 +4,7 @@
     <div class="menu">
       <div class="menu-section"
            tal:condition="'quicklinks' in provider.menus">
-        <div class="menu-section-title">Links</div>
+        <div class="menu-section-title"><i class="fas fa-angle-right"></i>Links</div>
         <a tal:repeat="um provider.menus['quicklinks']"
            tal:attributes="href um.url()">
           <span tal:attributes="class um.icon"></span>
@@ -13,7 +13,7 @@
       </div>
       <div class="menu-section"
            tal:condition="'personalpreferences' in provider.menus">
-        <div class="menu-section-title">Meine Einstellungen</div>
+        <div class="menu-section-title"><i class="fas fa-angle-right"></i>Meine Einstellungen</div>
         <a tal:repeat="um provider.menus['personalpreferences']"
            tal:attributes="href um.url()">
           <span tal:attributes="class um.icon"></span>
