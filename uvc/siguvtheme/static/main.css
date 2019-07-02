@@ -59,7 +59,7 @@ body[data-with-sidebar='true'] #portal-navigation .menu, .with-sidebar #portal-n
     padding: 30px;
     position: relative;
     transform: translate3d(-250px, 0, 0);
-    width: 250px;
+    width: 350px;
     will-change: transform;
     z-index: 90;
     -moz-transition: all .6s ease;
@@ -100,7 +100,7 @@ body[data-with-sidebar='true'] #portal-navigation-cover, .with-sidebar #portal-n
     padding: 30px;
     position: relative;
     transform: translate3d(-250px, 0, 0);
-    width: 250px;
+    width: 350px;
     will-change: transform;
     z-index: 90;
     -moz-transition: all .6s ease;
@@ -119,7 +119,29 @@ body[data-with-sidebar='true'] #portal-navigation-cover, .with-sidebar #portal-n
     text-transform: uppercase;
 }
 
-#portal-navigation .menu a, #portal-navigation .menu a:hover, #portal-navigation .menu a:focus, #portal-navigation .menu a:active, #portal-navigation .menu a:visited {
+#portal-navigation .menu .menu-section .menu-item-icon {
+    background-position: left;
+    display: block;
+    float: left;
+    height: 100%;
+    text-align: left;
+    width: 30px;
+}
+
+
+#portal-navigation .menu .menu-section .menu-item-title {
+    display: block;
+    position: relative;
+    top: -5px;
+    width: 180px;
+}
+
+
+#portal-navigation .menu a, 
+#portal-navigation .menu a:hover, 
+#portal-navigation .menu a:focus, 
+#portal-navigation .menu a:active, 
+#portal-navigation .menu a:visited {
     color: #2F3334;
     display: block;
     font-weight: 400;
@@ -130,4 +152,8 @@ body[data-with-sidebar='true'] #portal-navigation-cover, .with-sidebar #portal-n
 
 footer {
   padding-top: 30px;
+}
+
+i {
+    padding-right: 5px;
 }

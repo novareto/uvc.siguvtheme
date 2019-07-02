@@ -3,8 +3,9 @@
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<base href="" tal:attributes="href layout.base"/>
-		<tal:header tal:content="structure provider:headers" />
+    <link rel="icon" type="image/png" href="fanstatic/uvc.siguvtheme/favicon-32x32.png">
 
+		<tal:header tal:content="structure provider:headers" />
 	</head>
 	<body data-with-sidebar="false">
 <header id="menu-header" class="active">
@@ -21,7 +22,9 @@
 
         <div class="col-2">
           <div class="header-icons">
-            <i id="portaltab-burger-menu" class="glyphicon glyphicon-menu-hamburger"> MENU </i>
+            <a href="#">
+              <i id="portaltab-burger-menu" class="fas fa-bars"></i>
+            </a>
           </div>
         </div>
 

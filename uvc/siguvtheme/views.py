@@ -3,6 +3,7 @@
 # # cklinger@novareto.de
 
 import grok
+import uvcsite
 import megrok.pagetemplate as pt
 
 
@@ -26,3 +27,4 @@ class FieldMacros(grok.View):
 
 class FormTemplate(pt.PageTemplate):
     grok.layer(ISiguvTheme)
+    grok.view(uvcsite.browser.Form)
