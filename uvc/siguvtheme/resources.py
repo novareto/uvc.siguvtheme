@@ -14,5 +14,9 @@ bootstrap_css = Resource(
     source='siguvtheme.scss'
 )
 
+bootstrap_js = Resource(
+    library, 'bootstrap-4.3.1/dist/js/bootstrap.bundle.min.js', depends=[jquery, ] 
+)
+
 main_css = Resource(library, 'main.css', depends=[bootstrap_css, fontawesome_all_css ])
-main_js = Resource(library, 'main.js', depends=[jquery, ])
+main_js = Resource(library, 'main.js', depends=[bootstrap_js, ])
