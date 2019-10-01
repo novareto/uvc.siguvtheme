@@ -1,0 +1,22 @@
+<div id="siguv-navigation" class="enabled">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <nav class="navbar navbar-light navbar-expand-lg pt-0 pb-0">
+          <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+              <li tal:repeat="um provider.menus['globalmenu'].entries">
+                <a tal:attributes="href um.url()">
+                  <span class="menu-item-title" tal:content="um.title" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div class="navigation-menu">
+    <div class="navigation-handle"></div>
+  </div>
+</div>
