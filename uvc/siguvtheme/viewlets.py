@@ -1,11 +1,33 @@
 import grok
 import uvcsite.browser.layout.menu
+import uvcsite.browser.layout.slots
 
 from .skin import ISiguvTheme
 from zope import interface
 
 
 grok.templatedir("templates")
+
+
+class PageHeader(grok.ContentProvider):
+    grok.context(interface.Interface)
+    grok.layer(ISiguvTheme)
+    grok.template('header')
+
+
+class GlobalMenu(uvcsite.browser.layout.menu.MenuRenderer):
+    grok.context(interface.Interface)
+    grok.layer(ISiguvTheme)
+
+    bound_menus = ("globalmenu", )
+
+
+class GlobalMenuEntry(uvcsite.browser.layout.menu.MenuItem):
+    grok.layer(ISiguvTheme)
+    uvcsite.browser.layout.menu.menu(
+        uvcsite.browser.layout.slots.interfaces.IGlobalMenu)
+
+    title = "Something"
 
 
 class Sidebar(uvcsite.browser.layout.menu.MenuRenderer):

@@ -1,10 +1,8 @@
 html #menu-header.active {
-	background-color: #FFFFFF;
-	border-bottom: 1px solid #ccc;
-	height: 120px;
-	position: fixed;
-	width: 100%;
-	z-index: 45;
+    background-color: #FFFFFF;
+    position: fixed;
+    width: 100%;
+    z-index: 45;
 }
 
 html #menu-header .header-logo img {
@@ -12,6 +10,16 @@ html #menu-header .header-logo img {
     width: auto;
     padding: 0;
     margin: 25px 0 0 0;
+}
+
+#siguv-navigation {
+    display: block;
+    width: 100%;
+    background-color: #FFFFFF;
+    border-top: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
+    margin-top: 1em;
+    padding: 1em 0;
 }
 
 html #portaltab-burger-menu {
@@ -32,6 +40,14 @@ html #portal-footer-wrapper .page-footer {
 
 .page-footer a {
     color: #FFFFFF;
+}
+
+body {
+    font-family: 'DGUVMeta', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body > div.container {
+    padding: 140px 30px 100px 30px;
 }
 
 body[data-with-sidebar='true'] #portal-navigation, .with-sidebar #portal-navigation {
