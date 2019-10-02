@@ -5,7 +5,7 @@
         <nav class="navbar navbar-light navbar-expand-lg pt-0 pb-0">
           <div class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto">
-              <li tal:repeat="um provider.menus['globalmenu'].entries">
+              <li tal:repeat="um provider.menus['globalmenu'].entries" tal:attributes="class um.selected and 'active' or ''">
                 <a tal:attributes="href um.url()">
                   <span class="menu-item-title" tal:content="um.title" />
                 </a>

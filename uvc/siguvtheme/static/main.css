@@ -205,3 +205,26 @@ div#siguv-navigation  .menu-item-title {
     color: rgba(0,0,0,0.5);
 }
 
+div#siguv-navigation li.active .menu-item-title {
+    padding: 1rem 0;
+    margin-right: 1rem;
+    color: #004994;
+}
+
+#portal-navigation .menu .menu-section .menu-profile .profile-image {
+    background-image: url('/fanstatic/uvc.siguvtheme/defaultUser.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    height: 80px;
+    margin: 0 auto 30px auto;
+    opacity: 1;
+    overflow: hidden;
+    transition: opacity 150ms ease-in-out;
+    width: 80px;
+}
+
+#portal-navigation .menu .menu-section .menu-profile .profile-info {
+    text-align: center;
+}

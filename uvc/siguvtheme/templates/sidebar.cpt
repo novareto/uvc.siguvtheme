@@ -1,21 +1,31 @@
 <div id="portal-navigation-cover"></div>
 <div id="portal-mainnavigation">
-  <nav id="portal-navigation">
-    <div class="menu">
+	<nav id="portal-navigation">
+		<div class="menu">
+			<div id="sidebar-section-profile" class="menu-section">
+				<div class="menu-profile">
+					<a href="https://newtheme.bg-kooperation.de/@@personal-information">
+						<div class="profile-image"></div>
+						<div class="profile-info">
+							<div class="profile-name">admin</div>
+						</div>
+					</a>
+				</div>
+			</div>
       <div class="menu-section"
-           tal:condition="'quicklinks' in provider.menus">
+        tal:condition="'quicklinks' in provider.menus">
         <div class="menu-section-title">Links</div>
         <a tal:repeat="um provider.menus['quicklinks']"
-           tal:attributes="href um.url()">
+          tal:attributes="href um.url()">
           <i class="menu-item-icon fas fa-angle-right"></i>
           <span class="menu-item-title" tal:content="um.title"></span>
         </a>
       </div>
       <div class="menu-section"
-           tal:condition="'personalpreferences' in provider.menus">
+        tal:condition="'personalpreferences' in provider.menus">
         <div class="menu-section-title">Meine Einstellungen</div>
         <a tal:repeat="um provider.menus['personalpreferences']"
-           tal:attributes="href um.url()">
+          tal:attributes="href um.url()">
           <i class="menu-item-icon fas fa-angle-right"></i>
           <span class="menu-item-title" tal:content="um.title"></span>
         </a>

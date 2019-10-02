@@ -2,6 +2,7 @@ import grok
 import uvcsite.browser.layout.menu
 import uvcsite.browser.layout.slots
 
+from uvcsite.browser.layout.menu import menu
 from .skin import ISiguvTheme
 from zope import interface
 
@@ -24,8 +25,7 @@ class GlobalMenu(uvcsite.browser.layout.menu.MenuRenderer):
 
 class GlobalMenuEntry(uvcsite.browser.layout.menu.MenuItem):
     grok.layer(ISiguvTheme)
-    uvcsite.browser.layout.menu.menu(
-        uvcsite.browser.layout.slots.interfaces.IGlobalMenu)
+    menu(uvcsite.browser.layout.slots.interfaces.IGlobalMenu)
     grok.order(20)
 
     title = "Something"
@@ -33,8 +33,7 @@ class GlobalMenuEntry(uvcsite.browser.layout.menu.MenuItem):
 
 class GlobalMenuEntryActive(uvcsite.browser.layout.menu.MenuItem):
     grok.layer(ISiguvTheme)
-    uvcsite.browser.layout.menu.menu(
-        uvcsite.browser.layout.slots.interfaces.IGlobalMenu)
+    menu(uvcsite.browser.layout.slots.interfaces.IGlobalMenu)
     grok.order(10)
     grok.name('index_page')
     title = "Startseite"
@@ -52,6 +51,8 @@ class Sidebar(uvcsite.browser.layout.menu.MenuRenderer):
     def application_url(self):
         return grok.util.application_url(self.request, self.context)
 
+    def update(self):
+        import pdb; pdb.set_trace()
 
 class Footer(grok.ViewletManager):
     grok.context(interface.Interface)
