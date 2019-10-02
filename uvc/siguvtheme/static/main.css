@@ -47,7 +47,7 @@ body {
 }
 
 body > div.container {
-    padding: 140px 30px 100px 30px;
+    padding: 230px 30px 100px 30px;
 }
 
 body[data-with-sidebar='true'] #portal-navigation, .with-sidebar #portal-navigation {
@@ -198,3 +198,10 @@ h1 {
   color: #777777;
   font-weight: 300;
 }
+
+div#siguv-navigation  .menu-item-title {
+    padding: 1rem 0;
+    margin-right: 1rem;
+    color: rgba(0,0,0,0.5);
+}
+

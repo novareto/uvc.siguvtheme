@@ -26,8 +26,21 @@ class GlobalMenuEntry(uvcsite.browser.layout.menu.MenuItem):
     grok.layer(ISiguvTheme)
     uvcsite.browser.layout.menu.menu(
         uvcsite.browser.layout.slots.interfaces.IGlobalMenu)
+    grok.order(20)
 
     title = "Something"
+
+
+class GlobalMenuEntryActive(uvcsite.browser.layout.menu.MenuItem):
+    grok.layer(ISiguvTheme)
+    uvcsite.browser.layout.menu.menu(
+        uvcsite.browser.layout.slots.interfaces.IGlobalMenu)
+    grok.order(10)
+    grok.name('index_page')
+    title = "Startseite"
+
+    def url(self):
+        return self.view.application_url()
 
 
 class Sidebar(uvcsite.browser.layout.menu.MenuRenderer):
