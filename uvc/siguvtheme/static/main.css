@@ -228,3 +228,12 @@ div#siguv-navigation li.active .menu-item-title {
 #portal-navigation .menu .menu-section .menu-profile .profile-info {
     text-align: center;
 }
+
+#portal-navigation .menu .menu-section .menu-profile .profile-info .profile-name {
+    background-color: #F1F1F1;
+    border-radius: 8px;
+    color: #2F3334;
+    font-size: 18px;
+    font-weight: 300;
+    padding: 4px;
+}

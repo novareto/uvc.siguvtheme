@@ -13,14 +13,14 @@ grok.templatedir("templates")
 class PageHeader(grok.ContentProvider):
     grok.context(interface.Interface)
     grok.layer(ISiguvTheme)
-    grok.template('header')
+    grok.template("header")
 
 
 class GlobalMenu(uvcsite.browser.layout.menu.MenuRenderer):
     grok.context(interface.Interface)
     grok.layer(ISiguvTheme)
 
-    bound_menus = ("globalmenu", )
+    bound_menus = ("globalmenu",)
 
 
 class GlobalMenuEntry(uvcsite.browser.layout.menu.MenuItem):
@@ -35,7 +35,7 @@ class GlobalMenuEntryActive(uvcsite.browser.layout.menu.MenuItem):
     grok.layer(ISiguvTheme)
     menu(uvcsite.browser.layout.slots.interfaces.IGlobalMenu)
     grok.order(10)
-    grok.name('index_page')
+    grok.name("index_page")
     title = "Startseite"
 
     def url(self):
@@ -51,8 +51,25 @@ class Sidebar(uvcsite.browser.layout.menu.MenuRenderer):
     def application_url(self):
         return grok.util.application_url(self.request, self.context)
 
-    def update(self):
-        import pdb; pdb.set_trace()
+    def getPrincipalInformation(self):
+        principal = self.request.principal
+        ret = {}
+        print(principal.id)
+        if principal.id == "zope.manager":
+            ret["title"] = "ADMIN"
+            ret["homefolder_url"] = "#"
+        elif principal.id == "zope.anybody":
+            ret["title"] = "ANON"
+            ret["homefolder_url"] = "#"
+        else:
+            ret["title"] = principal.id
+            ret["homefolder_url"] = principal.homefolder_url
+        return ret
+
+    # def update(self):
+    #    super(Sidebar, self).update()
+    #    import pdb; pdb.set_trace()
+
 
 class Footer(grok.ViewletManager):
     grok.context(interface.Interface)

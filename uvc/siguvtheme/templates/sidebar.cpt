@@ -1,13 +1,13 @@
 <div id="portal-navigation-cover"></div>
 <div id="portal-mainnavigation">
 	<nav id="portal-navigation">
-		<div class="menu">
+		<div class="menu" tal:define="principal provider.getPrincipalInformation()">
 			<div id="sidebar-section-profile" class="menu-section">
 				<div class="menu-profile">
-					<a href="https://newtheme.bg-kooperation.de/@@personal-information">
+					<a href="" tal:attributes="href principal.get('homefolder_url')">
 						<div class="profile-image"></div>
 						<div class="profile-info">
-							<div class="profile-name">admin</div>
+              <div class="profile-name"><span tal:replace="principal.get('title')"/></div>
 						</div>
 					</a>
 				</div>
