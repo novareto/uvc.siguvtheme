@@ -1,0 +1,24 @@
+<tal:header>
+<div class="container header-wrapper">
+  <div class="row">
+    <div class="col-6">
+      <a class="header-logo" href="">
+        <img src="" alt="BG-ETEM" title="BG-ETEM"
+             tal:attributes="src '/fanstatic/uvc.siguvtheme/bg-etem.svg'" />
+      </a>
+    </div>
+    <div class="col-4">
+    </div>
+    <div class="col-2">
+      <div class="header-icons">
+        <a href="#">
+          <i id="portaltab-burger-menu" class="fas fa-bars"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<tal:sidebar tal:content="structure provider:sidebar" />
+<div tal:replace="structure provider:pagetop" />
+<div tal:replace="structure provider:globalmenu" />
+</tal:header>

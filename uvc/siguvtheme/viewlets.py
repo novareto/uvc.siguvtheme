@@ -1,6 +1,8 @@
 import grok
 import uvcsite.browser.layout.menu
+import uvcsite.browser.layout.slots
 
+from uvcsite.browser.layout.menu import menu
 from .skin import ISiguvTheme
 from zope import interface
 
@@ -8,14 +10,65 @@ from zope import interface
 grok.templatedir("templates")
 
 
+class PageHeader(grok.ContentProvider):
+    grok.context(interface.Interface)
+    grok.layer(ISiguvTheme)
+    grok.template("header")
+
+
+class GlobalMenu(uvcsite.browser.layout.menu.MenuRenderer):
+    grok.context(interface.Interface)
+    grok.layer(ISiguvTheme)
+
+    bound_menus = ("globalmenu",)
+
+
+class GlobalMenuEntry(uvcsite.browser.layout.menu.MenuItem):
+    grok.layer(ISiguvTheme)
+    menu(uvcsite.browser.layout.slots.interfaces.IGlobalMenu)
+    grok.order(20)
+
+    title = "Something"
+
+
+class GlobalMenuEntryActive(uvcsite.browser.layout.menu.MenuItem):
+    grok.layer(ISiguvTheme)
+    menu(uvcsite.browser.layout.slots.interfaces.IGlobalMenu)
+    grok.order(10)
+    grok.name("index_page")
+    title = "Startseite"
+
+    def url(self):
+        return self.view.application_url()
+
+
 class Sidebar(uvcsite.browser.layout.menu.MenuRenderer):
     grok.context(interface.Interface)
     grok.layer(ISiguvTheme)
 
     bound_menus = ("quicklinks", "personalpreferences")
-
+    
     def application_url(self):
         return grok.util.application_url(self.request, self.context)
+
+    def getPrincipalInformation(self):
+        principal = self.request.principal
+        ret = {}
+        print(principal.id)
+        if principal.id == "zope.manager":
+            ret["title"] = "ADMIN"
+            ret["homefolder_url"] = "#"
+        elif principal.id == "zope.anybody":
+            ret["title"] = "ANON"
+            ret["homefolder_url"] = "#"
+        else:
+            ret["title"] = principal.id
+            ret["homefolder_url"] = principal.homefolder_url
+        return ret
+
+    # def update(self):
+    #    super(Sidebar, self).update()
+    #    import pdb; pdb.set_trace()
 
 
 class Footer(grok.ViewletManager):

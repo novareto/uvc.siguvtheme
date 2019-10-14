@@ -1,57 +1,27 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<base href="" tal:attributes="href layout.base"/>
-    <link rel="icon" type="image/png" href="fanstatic/uvc.siguvtheme/favicon-32x32.png">
-
-		<tal:header tal:content="structure provider:headers" />
-	</head>
-	<body data-with-sidebar="false">
-<header id="menu-header" class="active">
-    <div class="container header-wrapper">
-
-      <div class="row">
-
-        <div class="col-10">
-          <a class="header-logo" href="">
-            <img src="" tal:attributes="href layout.base; src '/fanstatic/uvc.siguvtheme/bg-etem.svg'" alt="Plone site" title="Plone site">
-          </a>
-        </div>
-
-
-        <div class="col-2">
-          <div class="header-icons">
-            <a href="#">
-              <i id="portaltab-burger-menu" class="fas fa-bars"></i>
-            </a>
-          </div>
-        </div>
-
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="" tal:attributes="href layout.base"/>
+    <link rel="icon" type="image/png"
+          href="fanstatic/uvc.siguvtheme/favicon-32x32.png">
+    <tal:header tal:content="structure provider:headers" />
+  </head>
+  <body data-with-sidebar="false">
+    <header id="menu-header" class="active"
+            tal:content="structure provider:pageheader" />
+    <div class="container">
+      <div class="content container">
+        <div id="uvc-above-body"
+          tal:content="structure provider:above-body"></div>
+        <div id="uvc-tabs"
+          tal:content="structure provider:tabs"></div>
+        <div id="uvc-inner-body"
+          tal:content="structure view.content()"></div>
+        <div id="uvc-below-body"
+          tal:content="structure provider:below-body"></div>
+      </div>
     </div>
-
-    </div>
-
-
-
-		<tal:header tal:content="structure provider:sidebar" />
-
-
-
-				<div tal:content="structure provider:pagetop"> </div>
-  </header>
-		<div class="container" style="padding-top: 140px;">
-			<div class="content">
-				<div id="uvc-above-body"
-					tal:content="structure provider:above-body"></div>
-				<div id="uvc-tabs"
-					tal:content="structure provider:tabs"></div>
-				<div id="uvc-inner-body"
-					tal:content="structure view.content()"></div>
-				<div id="uvc-below-body"
-					tal:content="structure provider:below-body"></div>
-			</div>
-			<footer class="footer" tal:content="structure provider:footer"></footer>
-		</div>
-	</body>
+    <footer class="footer" tal:content="structure provider:footer" />
+  </body>
 </html>
