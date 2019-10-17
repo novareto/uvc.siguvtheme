@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-12">
         <nav class="navbar navbar-light navbar-expand-lg pt-0 pb-0">
-          <div class="collapse navbar-collapse">
+          <div>
             <ul class="navbar-nav mr-auto">
               <li tal:repeat="um provider.menus['globalmenu'].entries" tal:attributes="class um.selected and 'active' or ''">
                 <a tal:attributes="href um.url()">
