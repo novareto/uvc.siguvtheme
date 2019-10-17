@@ -4,7 +4,7 @@
       <div class="container">
         <div class="row">
 
-          <div class="col-xs-12 col-md-3">
+          <div class="col-sm">
             <h4>Berufsgenossenschaft Energie Textil Elektro Medienerzeugnisse</h4>
             <ul class="list-unstyled">
               <li>
@@ -21,7 +21,7 @@
             </ul>
           </div>
 
-          <div class="col-xs-12 col-md-3">
+          <div class="col-sm">
             <h4>Die BG ETEM</h4>
             <ul class="list-unstyled">
               <li class="footerItem"><a href="https://www.bgetem.de/die-bgetem">Aufgaben</a></li>
@@ -33,7 +33,7 @@
             </ul>
           </div>
 
-          <div class="col-xs-12 col-md-3">
+          <div class="col-sm">
             <h4></h4>
             <ul class="list-unstyled">
               <li class="footerItem"><a href="https://extranet-weblogin.bgetem.de/">EXTRANET</a></li>
@@ -42,7 +42,7 @@
             </ul>
           </div>
 
-          <div class="col-xs-12 col-md-3">
+          <div class="col-sm">
             <a href="https://www.bgetem.de/ansprechpartner-bg-etem?pk_campaign=Ansprechpartnersuche">
               <h4>Haben Sie Fragen?</h4>
               <p>Unter 0221 3778-0 erreichen Sie uns telefonisch.</p>

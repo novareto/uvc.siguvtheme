@@ -47,14 +47,13 @@ class Sidebar(uvcsite.browser.layout.menu.MenuRenderer):
     grok.layer(ISiguvTheme)
 
     bound_menus = ("quicklinks", "personalpreferences")
-    
+
     def application_url(self):
         return grok.util.application_url(self.request, self.context)
 
     def getPrincipalInformation(self):
         principal = self.request.principal
         ret = {}
-        print(principal.id)
         if principal.id == "zope.manager":
             ret["title"] = "ADMIN"
             ret["homefolder_url"] = "#"
@@ -65,10 +64,6 @@ class Sidebar(uvcsite.browser.layout.menu.MenuRenderer):
             ret["title"] = principal.id
             ret["homefolder_url"] = principal.homefolder_url
         return ret
-
-    # def update(self):
-    #    super(Sidebar, self).update()
-    #    import pdb; pdb.set_trace()
 
 
 class Footer(grok.ViewletManager):
