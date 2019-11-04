@@ -1,12 +1,12 @@
 <tal:widget>
   <div class="form-check"
        tal:repeat="choice widget.renderableChoice()">
-    <input type="checkbox" id="#" name="#" value="#" checked="#" class="#"
+    <input type="checkbox" id="#" name="#" value="#" checked="#" class="form-check-input"
            tal:attributes="name widget.identifier;
                            value choice.token;
                            id choice.id;
                            checked choice.checked and 'checked' or None;
-                           class widget.htmlClass()" />
+                           " />
     <label for="#"
            class="form-check-label"
            tal:attributes="for choice.id"

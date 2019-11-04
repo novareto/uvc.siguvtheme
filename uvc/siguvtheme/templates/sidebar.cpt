@@ -6,7 +6,7 @@
       <div id="sidebar-section-profile" class="menu-section">
 	<div class="menu-profile">
 	  <a href="" tal:attributes="href principal.get('homefolder_url')">
-	    <div class="profile-image" />
+	    <div class="profile-image"></div>
 	    <div class="profile-info">
               <div class="profile-name"
                    tal:content="principal.get('title')" />

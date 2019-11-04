@@ -1,6 +1,7 @@
 import grok
 import zope.interface
 import zeam.form.ztk.widgets.collection
+import zeam.form.ztk.widgets.choice
 from .skin import ISiguvTheme
 
 
@@ -12,6 +13,18 @@ class MultiChoiceFieldWidget(
     grok.adapts(
         zeam.form.ztk.widgets.collection.SetField,
         zeam.form.ztk.widgets.collection.ChoiceField,
+        zope.interface.Interface,
+        ISiguvTheme)
+
+    def htmlClass(self):
+        return "form-check-input"
+
+
+class RadioFieldWidget(
+        zeam.form.ztk.widgets.choice.RadioFieldWidget):
+    grok.adapts(
+        zeam.form.ztk.widgets.choice.ChoiceField,
+        zope.interface.Interface,
         zope.interface.Interface,
         ISiguvTheme)
 
