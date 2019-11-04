@@ -1,8 +1,8 @@
 import grok
-import uvcsite.browser.layout.menu
+import uvc.menus.components
+import uvc.menus.directives
 import uvcsite.browser.layout.slots
 
-from uvcsite.browser.layout.menu import menu
 from .skin import ISiguvTheme
 from zope import interface
 
@@ -16,33 +16,36 @@ class PageHeader(grok.ContentProvider):
     grok.template("header")
 
 
-class GlobalMenu(uvcsite.browser.layout.menu.MenuRenderer):
+class GlobalMenu(uvc.menus.components.MenuRenderer):
     grok.context(interface.Interface)
     grok.layer(ISiguvTheme)
 
     bound_menus = ("globalmenu",)
 
 
-class GlobalMenuEntry(uvcsite.browser.layout.menu.MenuItem):
+class GlobalMenuEntry(uvc.menus.components.MenuItem):
     grok.layer(ISiguvTheme)
-    menu(uvcsite.browser.layout.slots.interfaces.IGlobalMenu)
     grok.order(20)
+    uvc.menus.directives.menu(
+        uvcsite.browser.layout.slots.interfaces.IGlobalMenu)
 
     title = "Something"
 
 
-class GlobalMenuEntryActive(uvcsite.browser.layout.menu.MenuItem):
+class GlobalMenuEntryActive(uvc.menus.components.MenuItem):
     grok.layer(ISiguvTheme)
-    menu(uvcsite.browser.layout.slots.interfaces.IGlobalMenu)
     grok.order(10)
     grok.name("index_page")
+    uvc.menus.directives.menu(
+        uvcsite.browser.layout.slots.interfaces.IGlobalMenu)
+
     title = "Startseite"
 
     def url(self):
         return self.view.application_url()
 
 
-class Sidebar(uvcsite.browser.layout.menu.MenuRenderer):
+class Sidebar(uvc.menus.components.MenuRenderer):
     grok.context(interface.Interface)
     grok.layer(ISiguvTheme)
 
