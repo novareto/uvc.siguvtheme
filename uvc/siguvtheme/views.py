@@ -7,7 +7,7 @@ import megrok.pagetemplate as pt
 from zope.interface import Interface
 from grokcore.chameleon.components import ChameleonPageTemplateFile
 
-import uvcsite
+from zeam.form.base import Form
 from .skin import ISiguvTheme
 
 
@@ -30,4 +30,4 @@ class FieldMacros(grok.View):
 
 class FormTemplate(pt.PageTemplate):
     grok.layer(ISiguvTheme)
-    grok.view(uvcsite.browser.Form)
+    grok.view(Form)
