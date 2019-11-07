@@ -7,8 +7,10 @@ import megrok.pagetemplate as pt
 from zope.interface import Interface
 from grokcore.chameleon.components import ChameleonPageTemplateFile
 
-from zeam.form.base import Form
+from zeam.form.base.interfaces import IForm
 from .skin import ISiguvTheme
+from grokcore.layout.interfaces import ILayout, IPage
+from zeam.form.layout.form import FormTemplate
 
 
 grok.templatedir("templates")
@@ -28,6 +30,5 @@ class FieldMacros(grok.View):
     template = ChameleonPageTemplateFile("templates/fieldtemplates.cpt")
 
 
-class FormTemplate(pt.PageTemplate):
+class FormTemplate(FormTemplate):
     grok.layer(ISiguvTheme)
-    grok.view(Form)
