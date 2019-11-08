@@ -47,7 +47,7 @@ body {
 }
 
 body > div.container {
-    padding: 230px 30px 100px 30px;
+    padding: 170px 30px 100px 30px;
 }
 
 body[data-with-sidebar='true'] #portal-navigation, .with-sidebar #portal-navigation {
@@ -236,4 +236,12 @@ div#siguv-navigation li.active .menu-item-title {
     font-size: 18px;
     font-weight: 300;
     padding: 4px;
+}
+
+#navigation {
+    margin-bottom: 1em;
+}
+
+div.context-menu {
+    float: right;
 }
