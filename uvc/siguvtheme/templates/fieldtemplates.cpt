@@ -11,7 +11,7 @@
 
 
 <div metal:define-macro="doublefield" class="form-group" 
-	tal:attributes="id 'field-' + widget.htmlId(); class (widget.error or widget2.error) and 'form-group form-inline alert-danger has-error' or 'form-group form-inline'">
+	tal:attributes="id 'field-' + widget.htmlId(); class (widget.error or widget2.error) and 'form-group alert-danger has-error' or 'form-group'">
 	<label class="control-label" for="#" tal:attributes="for widget.htmlId()"> 
 		<span tal:content="string: ${widget.title} ${widget2.title} "> </span> <span tal:condition="widget.required"> * </span> 
 	</label>

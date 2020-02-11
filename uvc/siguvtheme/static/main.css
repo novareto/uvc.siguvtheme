@@ -245,3 +245,7 @@ div#siguv-navigation li.active .menu-item-title {
 div.context-menu {
     float: right;
 }
+
+.form-inline .form-control {
+    margin-right: 5px;
+}
