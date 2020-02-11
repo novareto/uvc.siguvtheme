@@ -1,0 +1,43 @@
+<div metal:define-macro="field" class="form-group" 
+	tal:attributes="id 'field-' + widget.htmlId(); class widget.error and 'form-group has-error alert-danger' or 'form-group'">
+	<label for="#" tal:attributes="for widget.htmlId()"> 
+		<span tal:content="widget.title"> </span> <span tal:condition="widget.required"> * </span> 
+	</label>
+	<tal:error tal:define="error widget.error" tal:condition="error" />
+  <small class="form-text text-muted" tal:condition="widget.description" tal:content="structure widget.description" tal:attributes="for widget.htmlId()"></small>
+		<tal:widget tal:content="structure widget.render()" />
+    <div class="invalid-feedback" tal:condition="widget.error"> <span tal:content="widget.error.title"> Error </span> </div>
+</div>
+
+
+<div metal:define-macro="doublefield" class="form-group" 
+	tal:attributes="id 'field-' + widget.htmlId(); class (widget.error or widget2.error) and 'form-group form-inline alert-danger has-error' or 'form-group form-inline'">
+	<label class="control-label" for="#" tal:attributes="for widget.htmlId()"> 
+		<span tal:content="string: ${widget.title} ${widget2.title} "> </span> <span tal:condition="widget.required"> * </span> 
+	</label>
+	<tal:error tal:define="error widget.error or widget2.error" tal:condition="error" />
+		<small class="form-text text-muted">
+			<span tal:condition="widget.description" tal:content="structure widget.description" tal:attributes="for widget.htmlId()"></span>
+			<span tal:condition="widget2.description" tal:content="structure widget2.description" tal:attributes="for widget2.htmlId()"></span>
+		</small>
+	<div class="form-inline">
+		<tal:widget tal:content="structure widget.render()" />
+		<tal:widget tal:content="structure widget2.render()" />
+	</div>
+		<div class="invalid-feedback">
+			<span class="help-inline" tal:condition="widget.error" tal:content="widget.error.title"> Error </span>
+			<span class="help-inline" tal:condition="widget2.error" tal:content="widget2.error.title"> Error </span>
+		</div>
+</div>
+
+
+<span metal:define-macro="field_inline" tal:attributes="id 'field-' + widget.htmlId(); class widget.error and 'control-group error' or 'control-group'">
+	<label for="#" tal:attributes="for widget.htmlId()" tal:content="widget.title"> </label>
+	<tal:widget tal:content="structure widget.render()" />
+</span>
+
+<div metal:define-macro="form-actions" class="form-actions" tal:condition="view.actionWidgets">
+	<span class="action" tal:repeat="widget view.actionWidgets">
+		<tal:widget tal:content="structure widget.render()" />
+	</span>
+</div>
