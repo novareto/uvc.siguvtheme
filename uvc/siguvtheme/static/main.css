@@ -17,7 +17,7 @@ html #menu-header .header-logo img {
     width: 100%;
     background-color: #FFFFFF;
     border-top: 1px solid #CCC;
-    border-bottom: 1px solid #CCC;
+    /*border-bottom: 1px solid #CCC;*/
     margin-top: 1em;
     padding: 1em 0;
 }
