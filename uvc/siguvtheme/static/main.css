@@ -249,3 +249,7 @@ div.context-menu {
 .form-inline .form-control {
     margin-right: 5px;
 }
+
+a:not([href]):not([tabindex]) {
+    color: white;
+}
