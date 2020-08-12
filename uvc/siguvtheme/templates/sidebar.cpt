@@ -17,20 +17,24 @@
         <div class="menu-section"
           tal:condition="'quicklinks' in provider.menus">
           <div class="menu-section-title">Links</div>
+          <div class="menu-section-content">
           <a tal:repeat="um provider.menus['quicklinks']"
             tal:attributes="href um.url()">
-            <i tal:omit-tag="not um.icon" class="menu-item-icon ${um.icon}"></i>
+            <span tal:omit-tag="not um.icon" class="menu-item-icon ${um.icon}"></span>
             <span class="menu-item-title" tal:content="um.title"></span>
           </a>
+          </div>
         </div>
-        <div class="menu-section" id="sidebar-section-navigation"
+        <div class="menu-section" id="sidebar-section-personalpreferences"
           tal:condition="'personalpreferences' in provider.menus">
           <div class="menu-section-title">Meine Einstellungen</div>
+          <div class="menu-section-content">
           <a tal:repeat="um provider.menus['personalpreferences']"
             tal:attributes="href um.url()">
             <span class="menu-item-title" tal:content="um.title"></span>
-            <span class="menu-item-nav fas fa-angle-right"></span>
+            <span class="menu-item-nav bi bi-caret-right-fill"></span>
           </a>
+          </div>
         </div>
       </div>
     </nav>
