@@ -117,10 +117,10 @@ body[data-with-sidebar='true'] #portal-navigation-cover, .with-sidebar #portal-n
 }
 
 
-#portal-navigation .menu a, 
-#portal-navigation .menu a:hover, 
-#portal-navigation .menu a:focus, 
-#portal-navigation .menu a:active, 
+#portal-navigation .menu a,
+#portal-navigation .menu a:hover,
+#portal-navigation .menu a:focus,
+#portal-navigation .menu a:active,
 #portal-navigation .menu a:visited {
     color: #2F3334;
     display: block;
@@ -216,4 +216,8 @@ div.context-menu {
 
 a:not([href]):not([tabindex]) {
     color: white;
+}
+
+nav .breadcrumb-item {
+    display: inline-block !important;
 }

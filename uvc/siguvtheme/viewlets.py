@@ -10,6 +10,12 @@ from zope import interface
 grok.templatedir("templates")
 
 
+class SiteCap(grok.ContentProvider):
+    grok.context(interface.Interface)
+    grok.layer(ISiguvTheme)
+    grok.template("sitecap")
+
+
 class PageHeader(grok.ContentProvider):
     grok.context(interface.Interface)
     grok.layer(ISiguvTheme)

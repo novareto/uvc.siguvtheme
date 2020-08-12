@@ -15,13 +15,19 @@ library = Library('uvc.siguvtheme', 'static')
 #)
 #
 #bootstrap_js = Resource(
-#    library, 'bootstrap-4.3.1/dist/js/bootstrap.bundle.min.js', depends=[jquery, ] 
+#    library, 'bootstrap-4.3.1/dist/js/bootstrap.bundle.min.js', depends=[jquery, ]
 #)
 
-sidebar_css = Resource(library, 'sidebar.css')
+sidebar_css = Resource(
+    library, 'sidebar.css')
 
-bootstrap_css = Resource(library, 'uvcsiguvtheme.css', compiler="sass", source="scss/siguv.scss")
-bootstrap_js = Resource(library, 'bootstrap.bundle.js',  depends=[jquery, ],  bottom=True)
+bootstrap_css = Resource(
+    library, 'uvcsiguvtheme.css', compiler="sass", source="scss/siguv.scss")
 
-main_css = Resource(library, 'main.css', depends=[bootstrap_css, fontawesome_all_css, sidebar_css ])
+bootstrap_js = Resource(
+    library, 'bootstrap.bundle.js',  depends=[jquery, ],  bottom=True)
+
+main_css = Resource(
+    library, 'main.css',
+    depends=[bootstrap_css, fontawesome_all_css, sidebar_css ])
 main_js = Resource(library, 'main.js', depends=[bootstrap_js, ])

@@ -3,12 +3,15 @@
 # ck@novareto.de
 
 import grok
-
-
 from grokcore import layout
+
+from z3c.flashmessage.receiver import GlobalMessageReceiver
+from zope.component import getMultiAdapter
 from zope.container.interfaces import IContainer
 from zope.interface import Interface
 from zope.traversing.browser import absoluteURL
+from zope.traversing.browser.interfaces import IAbsoluteURL
+
 from .resources import main_css, main_js
 
 
@@ -28,6 +31,10 @@ class Layout(layout.Layout):
     grok.layer(ISiguvTheme)
     grok.name('uvc.siguvtheme')
 
+    message_css = {
+        'message': 'alert alert-primary'
+    }
+
     def update(self):
         main_css.need()
         main_js.need()
@@ -36,3 +43,8 @@ class Layout(layout.Layout):
         self.base = absoluteURL(site, self.request)
         if IContainer.providedBy(self.context) and self.base[:-1] != '/':
             self.base = self.base + '/'
+
+        receiver = GlobalMessageReceiver()
+        self.messages = list(receiver.receive())
+        self.crumbs = getMultiAdapter(
+            (self.context, self.request), IAbsoluteURL).breadcrumbs()
