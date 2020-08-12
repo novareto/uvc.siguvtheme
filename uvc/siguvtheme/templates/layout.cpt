@@ -10,7 +10,7 @@
   <body data-with-sidebar="false">
     <header id="menu-header" class="active"
             tal:content="structure provider:pageheader" />
-    <div class="container">
+    <section id="content" class="container">
       <div class="content container">
         <div id="uvc-above-body"
           tal:content="structure provider:above-body"></div>
@@ -21,7 +21,7 @@
         <div id="uvc-below-body"
           tal:content="structure provider:below-body"></div>
       </div>
-    </div>
+    </section>
     <footer class="footer" tal:content="structure provider:footer" />
   </body>
 </html>

@@ -1,24 +1,52 @@
 <tal:header>
-<div class="container header-wrapper">
-  <div class="row">
-    <div class="col-6">
-      <a class="header-logo" href="">
-        <img src="" alt="BG-ETEM" title="BG-ETEM"
-             tal:attributes="src '/fanstatic/uvc.siguvtheme/bg-etem.svg'" />
-      </a>
-    </div>
-    <div class="col-4">
-    </div>
-    <div class="col-2">
-      <div class="header-icons">
-        <a href="#">
-          <i id="portaltab-burger-menu" class="fas fa-bars"></i>
-        </a>
+
+<div id="portal-header" class="bg-light">
+
+    <div class="container">
+
+      <div class="d-flex align-items-center justify-content-end">
+
+        <div class="align-middle">
+
+          <span class="site-action">
+            <a href="https://newbgetem.bg-kooperation.de/sign-language" title="Gebärdensprache">
+              <span>Gebärdensprache</span>
+            </a>
+          </span>
+          <span class="site-action">
+            <a href="https://newbgetem.bg-kooperation.de/plain-language" title="Leichte Sprache">
+              <span>Leichte Sprache</span>
+            </a>
+          </span>
+
+        </div>
+
+        <div>
+          <form class="mr-4">
+            <label class="sr-only" for="inlineFormInputGroup">Suchbegriff/Webcode</label>
+            <div class="input-group">
+              <input type="text" class="form-control border-dark" id="inlineFormInputGroup" placeholder="Suchbegriff/Webcode">
+              <div class="input-group-append">
+                <button type="submit" class="btn btn-light border-dark">Suchen</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div>
+          <span class="site-action mr-0">
+            <a href="https://www.siguv.de/" title="Login-Extranet">
+              <span>Login-Extranet</span>
+            </a>
+          </span>
+        </div>
+
       </div>
+
     </div>
   </div>
-</div>
+
+<div tal:replace="structure provider:globalmenu" />
 <tal:sidebar tal:content="structure provider:sidebar" />
 <div tal:replace="structure provider:pagetop" />
-<div tal:replace="structure provider:globalmenu" />
 </tal:header>
