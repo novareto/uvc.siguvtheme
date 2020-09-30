@@ -4,7 +4,7 @@
 		<span tal:content="widget.title"> </span> <span tal:condition="widget.required"> * </span> 
 	</label>
 	<tal:error tal:define="error widget.error" tal:condition="error" />
-  <small class="form-text text-muted" tal:condition="widget.description" tal:content="structure widget.description" tal:attributes="for widget.htmlId()"></small>
+  <small class="form-text text-muted is-invalid" tal:condition="widget.description" tal:content="structure widget.description" tal:attributes="for widget.htmlId()"></small>
 		<tal:widget tal:content="structure widget.render()" />
     <div class="invalid-feedback" tal:condition="widget.error"> <span tal:content="widget.error.title"> Error </span> </div>
 </div>
@@ -16,7 +16,7 @@
 		<span tal:content="string: ${widget.title} ${widget2.title} "> </span> <span tal:condition="widget.required"> * </span> 
 	</label>
 	<tal:error tal:define="error widget.error or widget2.error" tal:condition="error" />
-		<small class="form-text text-muted">
+		<small class="form-text text-muted is-invalid">
 			<span tal:condition="widget.description" tal:content="structure widget.description" tal:attributes="for widget.htmlId()"></span>
 			<span tal:condition="widget2.description" tal:content="structure widget2.description" tal:attributes="for widget2.htmlId()"></span>
 		</small>

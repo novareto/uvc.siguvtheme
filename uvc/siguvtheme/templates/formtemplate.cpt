@@ -1,6 +1,7 @@
 <form
    role="form"
    noValidate="true"
+   accept-charset="utf-8"
    method="post"
    enctype="multipart/form-data"
    novalidate="novalidate"
