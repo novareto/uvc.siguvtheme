@@ -11,26 +11,9 @@
     <header id="menu-header" class="active"
             tal:content="structure provider:pageheader" />
     <section id="content" class="container">
+      <br/>
+      <br/>
       <div class="content container">
-
-        <nav id="plone-breadcrumb" aria-label="breadcrumb">
-          <div class="container">
-            <ol class="breadcrumb">
-              <tal:loop repeat="crumb layout.crumbs">
-                <li class="breadcrumb-item"
-                    tal:condition="crumb['name'] and not repeat['crumb'].end">
-                  <a tal:content="crumb['name']"
-                     tal:attributes="href crumb['url']"
-                     >name</a>
-                </li>
-                <li class="breadcrumb-item active" aria-current="page"
-                    tal:condition="crumb['name'] and repeat['crumb'].end">
-                  <span tal:content="crumb['name']">name</span>
-                </li>
-              </tal:loop>
-            </ol>
-          </div>
-        </nav>
 
         <div id="flash-messages">
           <div role="alert"

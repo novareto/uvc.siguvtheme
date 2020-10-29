@@ -1,5 +1,5 @@
 <tal:header>
-  <div tal:replace="structure provider:sitecap" />
+  <!-- <div tal:replace="structure provider:sitecap" /> -->
   <div tal:replace="structure provider:globalmenu" />
   <tal:sidebar tal:content="structure provider:sidebar" />
   <div tal:replace="structure provider:pagetop" />
