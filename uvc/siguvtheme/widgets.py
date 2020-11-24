@@ -20,13 +20,13 @@ class MultiChoiceFieldWidget(
         return "form-check-input"
 
 
-class RadioFieldWidget(
-        zeam.form.ztk.widgets.choice.RadioFieldWidget):
+class RadioFieldWidget(zeam.form.ztk.widgets.choice.RadioFieldWidget):
     grok.adapts(
         zeam.form.ztk.widgets.choice.ChoiceField,
         zope.interface.Interface,
-        zope.interface.Interface,
         ISiguvTheme)
+    grok.name('radio')
 
-    def htmlClass(self):
+    def myHtmlClass(self):
         return "form-check-input"
+

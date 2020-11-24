@@ -11,6 +11,7 @@ from zope.container.interfaces import IContainer
 from zope.interface import Interface
 from zope.traversing.browser import absoluteURL
 from zope.traversing.browser.interfaces import IAbsoluteURL
+from megrok.resourceviewlet import ResourcesManager
 
 from .resources import main_css, main_js
 
@@ -48,3 +49,9 @@ class Layout(layout.Layout):
         self.messages = list(receiver.receive())
         self.crumbs = getMultiAdapter(
             (self.context, self.request), IAbsoluteURL).breadcrumbs()
+
+
+
+
+class Resources(ResourcesManager):
+    grok.context(Interface)

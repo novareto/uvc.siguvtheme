@@ -6,6 +6,7 @@
     <link rel="icon" type="image/png"
           href="fanstatic/uvc.siguvtheme/favicon-32x32.png">
     <tal:header tal:content="structure provider:headers" />
+     <tal:resources replace='provider:resources' />
   </head>
   <body data-with-sidebar="false">
     <header id="menu-header" class="active"
