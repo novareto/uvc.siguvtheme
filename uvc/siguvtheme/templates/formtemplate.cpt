@@ -28,7 +28,7 @@
                            or view.classes['group']">
 
         <tal:presentation tal:condition="widget.isVisible()">
-          <label for="#" tal:attributes="for widget.htmlId()">
+          <label class="control-label" for="#" tal:attributes="for widget.htmlId()">
             <span tal:content="widget.title" />
             <span tal:condition="widget.required">*</span> 
           </label>

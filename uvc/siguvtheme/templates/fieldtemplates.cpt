@@ -1,6 +1,6 @@
 <div metal:define-macro="field" class="form-group" 
 	tal:attributes="id 'field-' + widget.htmlId(); class widget.error and 'form-group has-error alert-danger' or 'form-group'">
-	<label for="#" tal:attributes="for widget.htmlId()"> 
+	<label class="control-label" for="#" tal:attributes="for widget.htmlId()"> 
 		<span tal:content="widget.title"> </span> <span tal:condition="widget.required"> * </span> 
 	</label>
 	<tal:error tal:define="error widget.error" tal:condition="error" />
@@ -32,7 +32,7 @@
 
 
 <span metal:define-macro="field_inline" tal:attributes="id 'field-' + widget.htmlId(); class widget.error and 'control-group error' or 'control-group'">
-	<label for="#" tal:attributes="for widget.htmlId()" tal:content="widget.title"> </label>
+	<label class="control-label" for="#" tal:attributes="for widget.htmlId()" tal:content="widget.title"> </label>
 	<tal:widget tal:content="structure widget.render()" />
 </span>
 
