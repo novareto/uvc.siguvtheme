@@ -47,7 +47,7 @@ body {
 }
 
 body > div.container {
-    padding: 170px 30px 100px 30px;
+    padding: 200px 30px 100px 30px;
 }
 
 body[data-with-sidebar='true'] #portal-navigation, .with-sidebar #portal-navigation {

@@ -57,10 +57,16 @@ class Sidebar(uvc.menus.components.MenuRenderer):
     def getPrincipalInformation(self):
         principal = self.request.principal
         ret = {}
+        ret["title"] = "ADMIN"
+        ret["homefolder_url"] = "#"
+        return ret
         if principal.id == "zope.manager":
             ret["title"] = "ADMIN"
             ret["homefolder_url"] = "#"
         elif principal.id == "zope.anybody":
+            ret["title"] = "ANON"
+            ret["homefolder_url"] = "#"
+        elif principal.id == 'zope.principalregistry.principalregistry.fallback_unauthenticated_principal':
             ret["title"] = "ANON"
             ret["homefolder_url"] = "#"
         else:

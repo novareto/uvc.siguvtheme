@@ -4,7 +4,7 @@
     <div class="col-6">
       <a class="header-logo" href="">
         <img src="" alt="BG-ETEM" title="BG-ETEM"
-             tal:attributes="src '/fanstatic/uvc.siguvtheme/bg-etem.svg'" />
+             tal:attributes="src '/fanstatic/uvc.siguvtheme/logo.jpg'" />
       </a>
     </div>
     <div class="col-4">
