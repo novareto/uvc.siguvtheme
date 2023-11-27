@@ -47,7 +47,7 @@ body {
 }
 
 body > div.container {
-    padding: 200px 30px 100px 30px;
+    padding: 150px 30px 100px 30px;
 }
 
 body[data-with-sidebar='true'] #portal-navigation, .with-sidebar #portal-navigation {
@@ -252,4 +252,12 @@ div.context-menu {
 
 a:not([href]):not([tabindex]) {
     color: white;
+}
+
+label {
+  margin-bottom: 0rem;
+}
+
+.form-text {
+  margin-top: 0rem;
 }

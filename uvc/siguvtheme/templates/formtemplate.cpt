@@ -1,6 +1,5 @@
 <form
    role="form"
-   noValidate="true"
    method="post"
    enctype="multipart/form-data"
    novalidate="novalidate"
@@ -31,15 +30,15 @@
             <span tal:content="widget.title" />
             <span tal:condition="widget.required">*</span> 
           </label>
+          <small class="form-text text-muted"
+                 tal:condition="widget.description"
+                 tal:content="structure widget.description"
+                 tal:attributes="for widget.htmlId()">&nbsp;</small>
         </tal:presentation>
 
         <tal:widget tal:content="structure widget.render()" />
 
         <tal:presentation tal:condition="widget.isVisible()">
-          <small class="form-text text-muted"
-                 tal:condition="widget.description"
-                 tal:content="structure widget.description"
-                 tal:attributes="for widget.htmlId()">&nbsp;</small>
           <div class="invalid-feedback" tal:condition="widget.error">
             <span tal:replace="structure widget.error.title"> Error </span>
           </div>

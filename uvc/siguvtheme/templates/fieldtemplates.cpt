@@ -3,8 +3,8 @@
 	<label for="#" tal:attributes="for widget.htmlId()"> 
 		<span tal:content="widget.title"> </span> <span tal:condition="widget.required"> * </span> 
 	</label>
-	<tal:error tal:define="error widget.error" tal:condition="error" />
   <small class="form-text text-muted" tal:condition="widget.description" tal:content="structure widget.description" tal:attributes="for widget.htmlId()"></small>
+	<tal:error tal:define="error widget.error" tal:condition="error" />
 		<tal:widget tal:content="structure widget.render()" />
     <div class="invalid-feedback" tal:condition="widget.error"> <span tal:content="widget.error.title"> Error </span> </div>
 </div>

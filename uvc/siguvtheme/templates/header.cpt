@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-6">
       <a class="header-logo" href="">
-        <img src="" alt="BG-ETEM" title="BG-ETEM"
+        <img src="" alt="BGHW" title="BGHW"
              tal:attributes="src '/fanstatic/uvc.siguvtheme/logo.jpg'" />
       </a>
     </div>

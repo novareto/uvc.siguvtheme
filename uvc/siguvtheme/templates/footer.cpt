@@ -1,8 +1,10 @@
 <footer id="portal-footer-wrapper">
+          <!--
   <div class="page-footer pt-4">
     <div class="container">
       <div class="container">
         <div class="row">
+
 
           <div class="col-sm">
             <h4>Berufsgenossenschaft Handel und Warenlogistik</h4>
@@ -52,9 +54,9 @@
               </p>
             </a>
           </div>
-
         </div>
       </div>
     </div>
   </div>
+ -->
 </footer>
