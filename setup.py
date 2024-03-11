@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.0'
+version = '1.0.1'
 
 setup(name='uvc.siguvtheme',
       version=version,
@@ -30,6 +30,6 @@ setup(name='uvc.siguvtheme',
          'fanstatic.libraries': [
             'uvc.siguvtheme = uvc.siguvtheme.resources:library',
             ],
-         'z3c.autoinclude.plugin': 'target=uvcsite', 
+         'z3c.autoinclude.plugin': 'target=uvcsite',
       }
       )
